@@ -9,7 +9,7 @@ const categoriesRouter = require('./controllers/categories')
 const cors = require('cors')
 
 mongoose
-  .connect(config.MONGODB_URI, { useNewUrlParser: true })
+  .connect(process.env.MONGODB_URI)
   .then(() => {
     logger.info('connected to MongoDB')
   })
